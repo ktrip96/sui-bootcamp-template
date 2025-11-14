@@ -19,14 +19,6 @@ export function Header() {
 				{/* Navigation Links */}
 				<nav className='flex items-center gap-6'>
 					<Link
-						to='/nft-leaderboard'
-						className={`text-sm font-medium transition-colors hover:text-primary ${
-							isActive('/nft-leaderboard') ? 'text-primary' : 'text-foreground'
-						}`}
-					>
-						NFT leaderboard
-					</Link>
-					<Link
 						to='/coin-leaderboard'
 						className={`text-sm font-medium transition-colors hover:text-primary ${
 							isActive('/coin-leaderboard') ? 'text-primary' : 'text-foreground'
