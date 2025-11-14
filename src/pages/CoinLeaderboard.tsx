@@ -113,7 +113,7 @@ function WalletDataFetcher({
 			owner: wallet.walletAddress,
 		},
 		{
-			refetchInterval: 10000,
+			refetchInterval: 5000,
 		}
 	)
 

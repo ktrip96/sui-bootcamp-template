@@ -44,7 +44,7 @@ export function MintButton({ soldOut = false }: MintButtonProps) {
 
 			// Call the mint function
 			const result = tx.moveCall({
-				target: `${PACKAGE_ID}::bootcamp_nft::mint`,
+				target: `${PACKAGE_ID}::accra::mint`,
 				arguments: [tx.object(TRACKER), payment],
 			})
 

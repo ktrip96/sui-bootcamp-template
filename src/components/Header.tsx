@@ -27,6 +27,7 @@ export function Header() {
 		},
 		{
 			enabled: !!account?.address,
+			refetchInterval: 5000,
 		}
 	)
 

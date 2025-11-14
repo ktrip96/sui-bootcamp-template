@@ -5,12 +5,18 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 
 export function NftMint() {
 	// Query the tracker to check mint status
-	const { data: trackerData, isLoading } = useSuiClientQuery('getObject', {
-		id: TRACKER,
-		options: {
-			showContent: true,
+	const { data: trackerData, isLoading } = useSuiClientQuery(
+		'getObject',
+		{
+			id: TRACKER,
+			options: {
+				showContent: true,
+			},
 		},
-	})
+		{
+			refetchInterval: 5000,
+		}
+	)
 
 	// Extract mint count and limit from tracker
 	const mintCount =
