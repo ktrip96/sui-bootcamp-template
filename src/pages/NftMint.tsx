@@ -23,17 +23,9 @@ export function NftMint() {
 			? Number(trackerData.data.content.fields.mint_count)
 			: 0
 
-	const mintLimit =
-		trackerData?.data?.content &&
-		typeof trackerData.data.content === 'object' &&
-		'fields' in trackerData.data.content &&
-		trackerData.data.content.fields &&
-		typeof trackerData.data.content.fields === 'object' &&
-		'mint_limit' in trackerData.data.content.fields
-			? Number(trackerData.data.content.fields.mint_limit)
-			: 28
+	const MINT_LIMIT = 28
 
-	const soldOut = mintCount >= mintLimit
+	const soldOut = mintCount >= MINT_LIMIT
 
 	// Extract minted addresses from tracker
 	const mintedAddresses: string[] =
@@ -71,7 +63,7 @@ export function NftMint() {
 						<div className='grid grid-cols-2 gap-4 p-4 bg-muted rounded-lg'>
 							<div className='text-center'>
 								<p className='text-sm text-muted-foreground'>Minted</p>
-								<p className='text-2xl font-bold'>{isLoading ? '...' : `${mintCount} / ${mintLimit}`}</p>
+								<p className='text-2xl font-bold'>{isLoading ? '...' : `${mintCount} / ${MINT_LIMIT}`}</p>
 							</div>
 							<div className='text-center'>
 								<p className='text-sm text-muted-foreground'>Price</p>
@@ -84,7 +76,7 @@ export function NftMint() {
 							<h3 className='font-semibold'>About this NFT</h3>
 							<ul className='list-disc list-inside space-y-1 text-sm text-muted-foreground'>
 								<li>Unique NFT that proves you attended the Sui Ghana 2025 Bootcamp</li>
-								<li>Limited edition: Only {mintLimit} NFTs available</li>
+								<li>Limited edition: Only {MINT_LIMIT} NFTs available</li>
 								<li>One NFT per wallet address</li>
 							</ul>
 						</div>
